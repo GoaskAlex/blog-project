@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button, Label, TextInput, Alert, Spinner } from 'flowbite-react'
+
+
 export default function SignUp() {
   {/*States*/}
   const [formData,setFormData] = useState({});
@@ -22,7 +24,7 @@ export default function SignUp() {
     try{
       setLoading(true)
       setErrorMes(null)
-      const res = await fetch ('/api/auth/signup',{
+      const res = await fetch ('/api/auth/sign-up',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify(formData),
