@@ -27,16 +27,18 @@ const newUser = new User({
 }
 
 export const signin = async (req,res,next) => {
-const{username, password} = req.body
+const{email, password} = req.body
 
-        if(!username || !password || username === ''|| password === ''){
+        if(!email || !password || email === ''|| password === ''){
             next(errorHandler(400,'All fields'))
-    } try{
-    const validateUser = await User.findOne({username})
+        } 
+            try{
+        const validateUser = await User.findOne({ email })
         if(!validateUser){
-           return next(errorHandler(404,'User not found'))
+        return next(errorHandler(404,'User not found'))
         }
-    const validPassword = bcryptjs.compareSync(password,validateUser.password) 
+        
+        const validPassword = bcryptjs.compareSync(password,validateUser.password) 
         if(!validPassword){
            return next(errorHandler(400,'Password not correct'))
         }
