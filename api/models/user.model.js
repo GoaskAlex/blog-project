@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    profilePicture:{
+        type:String,
+        default:"https://pbs.twimg.com/media/GWnf_k_WcAAt2E7?format=jpg&name=medium",
+    },
     },
     {timestamps:true}
 )
