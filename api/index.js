@@ -1,6 +1,7 @@
 //////////////////////////////////---Base 
 import express from 'express'
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 /////////////////////////////---Route Imports
 import userRoutes from './routes/user.route.js'
 import authRoutes from './routes/auth.route.js'
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO)
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser())
 
 app.listen(3000,()=>{
     console.log("Server Connected");
