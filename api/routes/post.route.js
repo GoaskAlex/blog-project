@@ -1,5 +1,5 @@
 import express from 'express'
-import {create, getposts, deletepost} from '../controllers/post.controllers.js'
+import {create, getposts, deletepost, updatepost} from '../controllers/post.controllers.js'
 import { verifyToken } from './../utils/verifyUser.js';
 
 const router = express.Router()
@@ -7,5 +7,5 @@ const router = express.Router()
 router.post('/create', verifyToken, create)
 router.get('/getposts', getposts)
 router.delete('/deletepost/:postId/:userId', verifyToken, deletepost)
-
+router.put('/updatepost/:postId/:userId', verifyToken, updatepost)
 export default router

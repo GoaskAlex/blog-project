@@ -106,7 +106,7 @@ export default function DashPosts() {
                                   }} className='font-medium text-red-600 hover:underline'>Delete</span>
                                 </TableCell>
                                 <TableCell>
-                                  <Link className='text-teal-500 hover:underline' to={`update-post/${post._id}`}><span>Edit</span></Link>
+                                  <Link className='text-teal-500 hover:underline' to={`/update-post/${post._id}`}><span>Edit</span></Link>
                                 </TableCell>
                               </TableRow>
                           </TableBody>
