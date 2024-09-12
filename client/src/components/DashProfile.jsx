@@ -93,7 +93,7 @@ export default function DashProfile() {
         try {
             dispatch(deleteUserStart())
             const res = await fetch(`/api/user/delete/${currentUser._id}`,
-                {method:'Delete',
+                {method:'DELETE',
 
                 })
                 const data = await res.json()
