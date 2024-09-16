@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react'
 import DashSidebar from '../components/DashSidebar'
 import DashProfile from '../components/DashProfile'
 import DashPosts from '../components/DashPosts'
+import DashUsers from '../components/DashUsers'
 export default function DashBoard() {
   const location = useLocation()
   const [tab, setTab] = useState('')
@@ -25,6 +26,8 @@ export default function DashBoard() {
         {tab ==='profile' && <DashProfile/>}
       {/* posts */}
         {tab ==='posts' && <DashPosts/>}
+      {/* users*/}
+        {tab ==='users' && <DashUsers/>}
     </div>
     </>
   )
