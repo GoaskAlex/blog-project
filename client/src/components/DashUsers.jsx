@@ -21,8 +21,8 @@ export default function DashUsers() {
         const res = await fetch(`/api/user/getusers`)
         const data = await res.json()
         if(res.ok){
-          setUsers(data.user)
-          if(data.user.length < 9){
+          setUsers(data.users)
+          if(data.users.length < 9){
             setShowMore(false)
           }
         }
@@ -44,7 +44,7 @@ export default function DashUsers() {
         const data = await res.json()
           if(res.ok){
             setUsers((prev)=>[...prev, ...data.user])
-            if(data.user.length < 9){
+            if(data.users.length < 9){
               setShowMore(false)
             }
           }

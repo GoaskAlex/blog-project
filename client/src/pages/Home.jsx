@@ -3,7 +3,7 @@ import React from 'react'
 export default function Home() {
   return (
     <>
-    <div className='max-w-lg'>
+    <div className='min-h-screen'>
       Home
     </div>
     </>

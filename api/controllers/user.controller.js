@@ -95,7 +95,7 @@ export const getUsers = async (req,res,next) => {
             createdAt:{$gte:oneMonthAgo},
         })
         res.status(200).json({
-            user:usersWithoutPassword,
+            users:usersWithoutPassword,
             totalUsers,
             lastMonthUsers
         })
