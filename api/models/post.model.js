@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
         },
         image:{
             type:String,
-            default:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F010%2F966%2F769%2Foriginal%2Fmail-letter-pixel-free-vector.jpg&f=1&nofb=1&ipt=62cbc7670e8c5f3ba31e7a307ed5b3f824c91740a70b42a582f50b6962ec8661&ipo=images"
+            default:"https://img.freepik.com/premium-vector/seamless-pattern-with-speech-bubbles_440210-163.jpg"
         },
         category:{
             type:String,

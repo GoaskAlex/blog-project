@@ -5,7 +5,7 @@ export default function PostCard({post}) {
     <>
      <div className='group relative w-full border border-teal-600 hover:border-4 h-[350px] mb-5 overflow-hidden rounded-lg sm:w-[430px] transition-all '>
         <Link to = {`/post/${post.slug}`}>
-            <img src={post.image} alt='post cover' className='h-[260px] w-full object-cover  group-hover:h-[200px] transition-all duration-300 z-20'/>
+            <img src={post.image} alt='post cover' className='h-[260px] w-full object-cover group-hover:h-[200px] transition-all duration-300 z-20'/>
         </Link>
         <div className="p-3 flex flex-col gap-2">
             <p className='text-lg font-semibold line-clamp-2'>{post.title}</p>
