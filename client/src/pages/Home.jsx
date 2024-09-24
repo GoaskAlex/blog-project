@@ -23,9 +23,7 @@ export default function Home() {
     <div className="">
       <div className="flex flex-col gap-6 p-20 px-3 max-w-6xl mx-auto">
         <h1 className='text-3xl font-bold lg:text-6xl'> Welcome To My Blog</h1>
-        <p className='text-gray-500 text-xs sm:text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam 
-        quis temporibus rerum quam architecto eos fuga. Minus iure 
-        repellat vero possimus eveniet laudantium, quidem est eius tenetur nostrum hic perspiciatis?</p>
+        <p className='text-gray-500 text-xs sm:text-lg'>Follow my journey in Web development. Sharing tools, projects and interests alike.</p>
       <Link to ='/search' className='text-xs sm:text-sm text-teal-500 font-bold hover:underline'>View all posts</Link>
       </div>
       <div className="p-3 w-3/5 mx-auto rounded-lg bg-lime-100 dark:bg-slate-700">

@@ -23,7 +23,7 @@ export default function About() {
         <div className="mb-4 flex flex-col">
             <div className="w-[4.5rem] h-1 bg-slate-400 dark:bg-slate-50 absolute left-[104px] top-10"></div>
             <h1 className="text-4xl font-semibold text-left my-1">I'm John Rodriguez, a Full Stack Web Developer</h1>
-            <h2 className='mt-6'>I Enjoy building and designing Web Sites. </h2>
+            <h2 className='mt-6'>I enjoy building and designing Web Sites. </h2>
             <Button onClick={()=>{setShowModal(true)}} outline gradientDuoTone="purpleToPink" className='mt-14'>Hire Me</Button>
         </div>
           <div className=''>
@@ -34,12 +34,12 @@ export default function About() {
       <div className="w-[1px] min-h-36 mx-52 bg-gray-300 dark:bg-white"></div>
       <div className="w-40 mr-5 min-w-96">
         <h1 className='text-2xl my-4'> About Me</h1>
-        <p className='dark:text-gray-400'>
-        A Web Developer with strong knowledge of web technologies and a recent graduate. 
-        Versed in concepts about JavaScript DOM, MongoDB, React and React Hooks. 
-        I’ve worked on projects with tight deadlines that pushed my skills to grow in each challenge. 
-        As a Web Developer, I possess a valuable combination of technical skills, 
-        learning agility, and have a strong work ethic. Eager to tackle web development/design challenges to achieve a great user experience.
+        <p className='dark:text-gray-400 '>
+        A Web Developer with strong knowledge of web technologies when it comes to the MERN stack and a recent graduate. I took courses at 
+        PerScholas to make a career change, with the focus of Software Engineering. I previously worked as a elevator mechanic performing dangerous tasks for 7 years
+        however, I wasn't fulfilled in the work and purpose. I've always enjoyed coding in college and knew being in the realm of Web Development is the right fit for me.
+        I'm ready to branch out and expand my knowledge and become a great programmer.
+        
         </p>
       
         </div> 
