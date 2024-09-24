@@ -4,8 +4,9 @@ import {useState} from 'react'
 import { FaAddressBook, FaPaperPlane } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
-export default function About() {
 
+export default function About() {
+  
   const [showModal, setShowModal] = useState(false)
   const [formData, setFormData] = useState({})
 
