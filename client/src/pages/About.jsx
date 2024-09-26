@@ -19,22 +19,25 @@ export default function About() {
   }
   return (
     <>
-    <div className='flex gap-4 items-center justify-center h-screen'>
-      <div className="flex gap-9 max-w-3xl w-5/6 my-24 py-10 px-10 bg-slate-200 dark:bg-slate-600 rounded border border-teal-400 relative">
-        <div className="mb-4 flex flex-col">
-            <div className="w-[4.5rem] h-1 bg-slate-400 dark:bg-slate-50 absolute left-[104px] top-10"></div>
-            <h1 className="text-4xl font-semibold text-left my-1">I'm John Rodriguez, a Full Stack Web Developer</h1>
-            <h2 className='mt-6'>I enjoy building and designing Web Sites. </h2>
-            <Button onClick={()=>{setShowModal(true)}} outline gradientDuoTone="purpleToPink" className='mt-14'>Hire Me</Button>
-        </div>
+    <div className="">
+    <div className='mx-7 my-6 p-4 max-full flex-wrap lg:flex '>
+      <div className="flex m-auto gap-4 w-full max-w-2xl py-10 p-3 bg-slate-200 dark:bg-slate-600 rounded border border-teal-400 relative my-20">
+        <div className="mb-4 gap-4 flex">
+            <div className="">
+              <div className="w-[4.5rem] h-1 bg-slate-400 dark:bg-slate-50 absolute left-[80px] top-10"></div>
+              <h1 className="text-4xl font-semibold text-left my-1">I'm John Rodriguez, a Full Stack Web Developer</h1>
+              <h2 className='mt-6'>I enjoy building and designing Web Sites. </h2>
+              <Button onClick={()=>{setShowModal(true)}} outline gradientDuoTone="purpleToPink" className='mt-14 w-full'>Hire Me</Button>
+            </div>
           <div className=''>
-            <img  className='rounded-lg'src = 'https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/402162401_3538484533029678_2202943475481925851_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=QeHA6Dei4g8Q7kNvgFnaJDd&_nc_ht=scontent-lga3-2.xx&_nc_gid=Ai37FnP_JRJUBGipwzJNopY&oh=00_AYBXELU4vIkwq8hjXgc96c48kogO2gUh9s7MsYJkEyVTPw&oe=66F7B9AD'/>
+            <img  className='rounded-lg max'src = 'https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/402162401_3538484533029678_2202943475481925851_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=QeHA6Dei4g8Q7kNvgFnaJDd&_nc_ht=scontent-lga3-2.xx&_nc_gid=Ai37FnP_JRJUBGipwzJNopY&oh=00_AYBXELU4vIkwq8hjXgc96c48kogO2gUh9s7MsYJkEyVTPw&oe=66F7B9AD'/>
           </div>
+        </div>
       </div>
      
-      <div className="w-[1px] min-h-36 mx-52 bg-gray-300 dark:bg-white"></div>
-      <div className="w-40 mr-5 min-w-96">
-        <h1 className='text-2xl my-4'> About Me</h1>
+      <div className="w-[1px] m-8 bg-gray-300 dark:bg-white"></div>
+      <div className="max-w-2xl m-auto">
+        <h1 className='text-2xl mb-6'> About Me</h1>
         <p className='dark:text-gray-400 '>
         A Web Developer with strong knowledge of web technologies when it comes to the MERN stack and a recent graduate. I took courses at 
         PerScholas to make a career change, with the focus of Software Engineering. I previously worked as a elevator mechanic performing dangerous tasks for 7 years
@@ -76,6 +79,7 @@ export default function About() {
           </Modal.Header>
       </Modal>
         }
+    </div>
     </div>
     </>
   )
