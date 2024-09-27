@@ -28,38 +28,38 @@ export default function CallToAction() {
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Ftwocaeh0b2p91.gif&f=1&nofb=1&ipt=52c4e0305256927a09067318a63d159f1e4b26d49e881c69d798ac704b85cac6&ipo=images" alt="img"/>
             </div>
             
-              {
-                <Modal show={showModal} onClose={()=>setShowModal(false)} popup size='md'>
-                <Modal.Header>
-                    <Modal.Body>
-                        <div className="flex flex-col gap-4">
-                          <div className=" mx-auto flex gap-2">
-                            <FaAddressBook className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4'/>
-                            <h1 className='mt-2 text-2xl font-semibold'>Hire Me</h1>
-                          </div>
-                          <form onSubmit={sendEmail} className='flex flex-wrap'>
-                            <div className="m-auto">
-                              <Label htmlFor='from_name' value='Your Name:'/>
-                              <TextInput  required onChange={(event)=> setFormData({...formData, from_name:event.target.value})} type='text' name='from_name' id='from_name' placeholder='Doe'/>
-                            </div>
-                            <div className="m-auto">
-                              <Label htmlFor='email_from' value='Your Email:'/>
-                              <TextInput  required onChange={(event)=> setFormData({...formData, email_from:event.target.value})} type='email' name='email_from' id='email_from' placeholder='@email.com'/>
-                            </div>
-                            <div className="text-center">
-                              <Label htmlFor='message' value='Message:'/>
-                              <Textarea required onChange={(value)=>setFormData({...formData, message:value})} className='w-80 h-40' type='text' name='message' id='message' placeholder='Hello...'/>
-                            </div>
-                            <div className="flex w-full justify-between mt-6">
-                              <Button type='submit'> Submit<FaPaperPlane className='ml-2 my-auto'/></Button>
-                              <Button onClick={()=>{setShowModal(false)}}>Cancel</Button>
-                            </div>
-                          </form>
-                        </div>
-                    </Modal.Body>
-                </Modal.Header>
-            </Modal>
-              }
+            {
+          <Modal show={showModal} onClose={()=>setShowModal(false)} popup size='md' className=''>
+          <Modal.Header>
+              <Modal.Body>
+                  <div className="flex flex-col gap-4">
+                    <div className=" mx-auto flex gap-2">
+                      <FaAddressBook className='h-14 w-14 text-gray-400 dark:text-gray-200 mb-4'/>
+                      <h1 className='mt-2 text-2xl font-semibold'>Hire Me</h1>
+                    </div>
+                    <form onSubmit={sendEmail} className='flex flex-wrap'>
+                      <div className="m-auto">
+                        <Label htmlFor='from_name' value='Your Name:'/>
+                        <TextInput  required onChange={(event)=> setFormData({...formData, from_name:event.target.value})} type='text' name='from_name' id='from_name' placeholder='Doe'/>
+                      </div>
+                      <div className="m-auto">
+                        <Label htmlFor='email_from' value='Your Email:'/>
+                        <TextInput  required onChange={(event)=> setFormData({...formData, email_from:event.target.value})} type='email' name='email_from' id='email_from' placeholder='@email.com'/>
+                      </div>
+                      <div className="text-center m-auto">
+                        <Label htmlFor='message' value='Message:'/>
+                        <Textarea required onChange={(value)=>setFormData({...formData, message:value})} className='min-w-60 min-h-24' type='text' name='message' id='message' placeholder='Hello...'/>
+                      </div>
+                      <div className="flex w-full justify-between mt-6">
+                        <Button type='submit'> Submit<FaPaperPlane className='ml-2 my-auto'/></Button>
+                        <Button onClick={()=>{setShowModal(false)}}>Cancel</Button>
+                      </div>
+                    </form>
+                  </div>
+              </Modal.Body>
+          </Modal.Header>
+      </Modal>
+        }
             
         </div>
     </>
