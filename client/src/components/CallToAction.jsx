@@ -25,7 +25,7 @@ export default function CallToAction() {
                  <Button onClick={()=>{setShowModal(true)}} outline gradientDuoTone="purpleToPink" className='mt-4'>Contact Me</Button>
             </div>
             <div className="p-7 flex-1">
-                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Ftwocaeh0b2p91.gif&f=1&nofb=1&ipt=52c4e0305256927a09067318a63d159f1e4b26d49e881c69d798ac704b85cac6&ipo=images" alt="img"/>
+                <img src="https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide.jpg" alt="img"/>
             </div>
             
             {

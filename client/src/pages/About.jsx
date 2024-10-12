@@ -3,13 +3,13 @@ import {Button, Modal, Label, TextInput, Textarea} from 'flowbite-react'
 import {useState} from 'react'
 import { FaAddressBook, FaPaperPlane } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
-
+import ReCAPATCHA from 'react-google-recaptcha'
 
 export default function About() {
   
   const [showModal, setShowModal] = useState(false)
   const [formData, setFormData] = useState({})
-
+  const [capVal, setCapVal]= useState(null)
 
   const sendEmail = (event) =>{
     event.preventDefault()
@@ -30,15 +30,15 @@ export default function About() {
               <h2 className='mt-6'>I enjoy building and designing Web Sites. </h2>
             </div>
                 <div className='mt-4 max-w-46 w-full'>
-                  <img  className='rounded-lg w-64 m-auto'src = 'https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/402162401_3538484533029678_2202943475481925851_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=QeHA6Dei4g8Q7kNvgFnaJDd&_nc_ht=scontent-lga3-2.xx&_nc_gid=Ai37FnP_JRJUBGipwzJNopY&oh=00_AYBXELU4vIkwq8hjXgc96c48kogO2gUh9s7MsYJkEyVTPw&oe=66F7B9AD'/>
+                  <img  className='rounded-lg w-64 m-auto'src = 'https://firebasestorage.googleapis.com/v0/b/mernblog-7380c.appspot.com/o/Myself.jpg?alt=media&token=a8331898-f9b0-4b94-859e-b0bb2685c1e0'/>
                 </div>
         </div>
               <Button onClick={()=>{setShowModal(true)}} outline gradientDuoTone="purpleToPink" className='mt-14 w-full'>Hire Me</Button>
         </div>
      
       <div className="w-[1px] m-8 bg-gray-300 dark:bg-white"></div>
-      <div className="max-w-2xl m-auto">
-        <h1 className='text-2xl mb-6'> About Me</h1>
+      <div className="max-w-2xl m-auto flex flex-col gap-2">
+        <h1 className='text-2xl mb-4'> About Me</h1>
         <p className='dark:text-gray-400 '>
         A Web Developer with strong knowledge of web technologies when it comes to the MERN stack and a recent graduate. I took courses at 
         PerScholas to make a career change, with the focus of Software Engineering. I previously worked as a elevator mechanic performing dangerous tasks for 7 years
@@ -46,7 +46,13 @@ export default function About() {
         I'm ready to branch out and expand my knowledge and become a great programmer.
         
         </p>
-      
+        <div className="flex flex-col mt-4 items-center p-2">
+            <p>To view more details about me. Feel free to view my Resume</p>
+          <div className="flex gap-4 mt-4 items-center">
+          <Button disabled={!capVal} outline gradientDuoTone="purpleToPink" className='text-center '>View Resume</Button>
+          <ReCAPATCHA onChange={(val) => setCapVal(val)} sitekey="6LfdDF8qAAAAAPpPaCqPjUIF1k3Z4iyqmL2HFYtQ"/>
+          </div>
+        </div>
         </div> 
         {
           <Modal show={showModal} onClose={()=>setShowModal(false)} popup size='md' className=''>

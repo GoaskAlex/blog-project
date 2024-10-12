@@ -53,9 +53,10 @@ export default function SignUp() {
           {/*leftSide*/}
           <div className="flex-1"> 
               <Link to ='/' className='font-bold dark:text-white text-4xl'>
-                <span className='px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to bg-pink-500 rounded-lg text-white'>Gamers</span>Heaven
+                <span className='mr-1 px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to bg-pink-500 rounded-lg text-white'>GoAsk.Dev</span>John
               </Link>
-              <p className='text-sm mt-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus expedita aspernatur sapiente sint, libero est!</p>
+              <p className='text-sm mt-5 text-balance'>This is a demo project. You can sign in with your email and password
+              or with Google.</p>
           </div>
           {/*rightSide*/}
           <div className="flex-1">

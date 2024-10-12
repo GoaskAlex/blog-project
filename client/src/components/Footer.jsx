@@ -23,16 +23,16 @@ export default function FooterCom() {
                 <Footer.Title title="About" />
                 <Footer.LinkGroup col>
                   <Footer.Link
-                    href="#"
-                    target="_blank"
+                    href="/about"
+                    
                     rel="noopener noreferrer">
                     Johns Resume
                   </Footer.Link>
                   <Footer.Link
-                    href="/about"
+                    href="/projects"
                     target="_blank"
                     rel="noopener noreferrer">
-                    Gamers Heaven
+                    Projects
                   </Footer.Link>
                 </Footer.LinkGroup>
               </div>
@@ -81,8 +81,8 @@ export default function FooterCom() {
                 <Footer.Copyright href="#" by = "John Rodriguez's Blog"  year = {new Date().getFullYear()}/>
             
             <div className="flex  gap-4 mt-2 sm:mt-0 sm:justify-center">
-                <Footer.Icon href = '#' icon = {BsLinkedin}/>
-                <Footer.Icon href = '#' icon = {BsGithub}/>
+                <Footer.Icon href="https://www.linkedin.com/in/johnarodriguez25/" icon = {BsLinkedin}/>
+                <Footer.Icon   href="https://github.com/GoaskAlex" icon = {BsGithub}/>
             </div>
             </div>
         </div>
