@@ -54,8 +54,8 @@ export default function SignIn() {
             </span>
             John
           </Link>
-          <p className='text-sm mt-5'>
-            This is a demo project. You can sign in with your email and password
+          <p className='text-sm mt-5 text-balance'>
+            This is a demo project. You can sign in with your email and password 
             or with Google.
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function SignIn() {
           <div className='flex gap-2 text-sm mt-5'>
             <span>Dont Have an account?</span>
             <Link to='/sign-up' className='text-blue-500'>
-              Sign Up
+              Sign-Up
             </Link>
           </div>
           {errorMessage && (

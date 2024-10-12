@@ -23,7 +23,8 @@ export default function Home() {
     <div className="">
       <div className="flex flex-col gap-6 p-20 px-3 max-w-6xl mx-auto">
         <h1 className='text-3xl font-bold lg:text-6xl'> Welcome To My Blog</h1>
-        <p className='text-gray-500 text-xs sm:text-lg'>Follow my journey in Web development. Sharing tools, projects and interests alike.</p>
+        <p className='text-gray-500 text-xs sm:text-lg '> This is a demo project. You can register or sign in with Google. Explore my <strong>MERN</strong> project. 
+          Follow my journey in Web Development. Sharing tools, projects and interests alike.</p>
       <Link to ='/search' className='text-xs sm:text-sm text-teal-500 font-bold hover:underline'>View all posts</Link>
       </div>
       <div className="p-3 w-3/5 mx-auto rounded-lg bg-lime-100 dark:bg-slate-700">
@@ -35,8 +36,9 @@ export default function Home() {
               <div className="flex flex-col gap-8 p-3 py-7">
                 <h2 className='text-2xl font-semibold text-center mb-4'>Recent Posts</h2>
                 <div className="flex flex-wrap gap-4 justify-center">
+                 
                   {
-                    posts.map((post=>(
+                    posts.slice(0,6).map((post=>(
                         <PostCard key={post._id} post={post}/>
                     ))
                   )}
