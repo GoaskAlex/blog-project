@@ -1,7 +1,8 @@
 import { Button, Select, TextInput } from 'flowbite-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import PostCard from '../components/PostCard';
+import React from 'react'
+const PostCard = React.lazy(()=>import('../components/PostCard'))
 
 export default function SearchPage() {
   const [sidebarData, setSidebarData] = useState({
@@ -151,7 +152,11 @@ export default function SearchPage() {
           {loading && <p className='text-xl text-gray-500'>Loading...</p>}
           {!loading &&
             posts &&
-            posts.map((post) => <PostCard key={post._id} post={post} />)}
+            posts.map((post) => 
+             <Suspense key={post._id} fallback={<div>Loading...</div>}>
+              <PostCard key={post._id} post={post}/>
+             </Suspense> 
+            )}
           {showMore && (
             <button
               onClick={handleShowMore}

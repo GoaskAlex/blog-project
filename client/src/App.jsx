@@ -1,19 +1,20 @@
+import {lazy,Suspense} from 'react'
 import{BrowserRouter,Routes,Route} from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
-import SignIn from './pages/SignIn'
-import SignUp from './pages/SignUp'
-import DashBoard from './pages/DashBoard'
-import Projects from './pages/Projects'
+const Home = lazy(()=>import('./pages/Home'))
+const About = lazy(()=>import('./pages/About'))
+const SignIn = lazy(()=>import('./pages/SignIn'))
+const SignUp = lazy(()=>import('./pages/SignUp'))
+const DashBoard = lazy(()=>import('./pages/DashBoard'))
+const Projects = lazy(()=>import('./pages/Projects'))
 import Header from './components/Header'
-import Footer from './components/Footer'
-import PrivateRoute from './components/PrivateRoute'
-import OnlyAdminPrivateRoute from './components/OnlyAdminPrivateRoute'
-import CreatePost from './pages/CreatePost'
-import UpdatePost from './pages/UpdatePost'
-import PostPage from './pages/PostPage'
+const Footer = lazy(()=>import('./components/Footer'))
+const PrivateRoute = lazy(()=>import('./components/PrivateRoute'))
+const OnlyAdminPrivateRoute = lazy(()=>import('./components/OnlyAdminPrivateRoute'))
+const CreatePost = lazy(()=>import('./pages/CreatePost'))
+const UpdatePost = lazy(()=>import('./pages/UpdatePost'))
+const PostPage = lazy(()=>import('./pages/PostPage'))
 import ScrollToTop from './components/ScrollToTop'
-import SearchPage from './pages/SearchPage'
+// import SearchPage from './pages/SearchPage'
  /////
 function App() {
 
@@ -22,12 +23,13 @@ return (
   <BrowserRouter>
   <ScrollToTop/>
     <Header/>
+      <Suspense fallback={<div>Loading...</div>}>
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/sign-in' element={<SignIn/>} />
       <Route path='/sign-up' element={<SignUp/>} />
-      <Route path='/search' element={<SearchPage/>} />
+      {/* <Route path='/search' element={<SearchPage/>} /> */}
         <Route element = {<PrivateRoute/>}>
           <Route path='/dashboard' element={<DashBoard/>} />
         </Route>
@@ -37,9 +39,9 @@ return (
         </Route>
       <Route path='/projects' element={<Projects/>} />
       <Route path='/post/:postSlug' element={<PostPage/>} />
-      
     </Routes>
     <Footer/>
+    </Suspense>
   </BrowserRouter>
     </>
   )
