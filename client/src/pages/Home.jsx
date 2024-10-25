@@ -1,8 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import CallToAction from './../components/CallToAction';
-import {useState, useEffect} from 'react'
-import PostCard from './../components/PostCard';
+import {useState, useEffect, Suspense} from 'react'
+
+
+const CallToAction = React.lazy(()=> import('./../components/CallToAction.jsx'))
+const PostCard = React.lazy(()=> import('./../components/PostCard.jsx'))
+
 export default function Home() {
   const [posts, setPosts] = useState([])
 
@@ -28,7 +31,9 @@ export default function Home() {
       <Link to ='/search' className='text-xs sm:text-sm text-teal-500 font-bold hover:underline'>View all posts</Link>
       </div>
       <div className="p-3 w-3/5 mx-auto rounded-lg bg-lime-100 dark:bg-slate-700">
+      <Suspense fallback={<div>Loading..</div>}>
         <CallToAction/>
+      </Suspense>
       </div>
         <div className="flex flex-col">
           {
@@ -39,7 +44,9 @@ export default function Home() {
                  
                   {
                     posts.slice(0,6).map((post=>(
+                      <Suspense key={post._id} fallback={<div>Loading..</div>}>
                         <PostCard key={post._id} post={post}/>
+                      </Suspense>  
                     ))
                   )}
                 </div>

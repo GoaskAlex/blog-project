@@ -1,5 +1,6 @@
+import {Suspense} from 'react'
 import React from 'react'
-import CallToAction from './../components/CallToAction';
+const CallToAction = React.lazy(()=> import('../components/CallToAction'))
 export default function Projects() {
   return (
     <>
@@ -8,7 +9,9 @@ export default function Projects() {
         <p>Got any suggestions? Or recommendations send me an Email. Coding one day at a time. 
           See You Soon!!
         </p>
+        <Suspense fallback={<div>Loading</div>}>
           <CallToAction/>
+        </Suspense>  
       </div>
     </>
   )

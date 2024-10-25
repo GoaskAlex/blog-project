@@ -1,10 +1,14 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, Suspense} from 'react'
 import { Button, Spinner } from 'flowbite-react'
-import CallToAction from '../components/CallToAction'
-import CommentSection from '../components/CommentSection'
-import PostCard from '../components/PostCard'
+
+
+
+const CallToAction = React.lazy(()=> import('../components/CallToAction'))
+const PostCard = React.lazy(()=> import('../components/PostCard'))
+const CommentSection = React.lazy(()=> import('../components/CommentSection'))
+
 
 export default function PostPage() {
   const {postSlug} = useParams()
@@ -72,17 +76,23 @@ export default function PostPage() {
        </div>
        <div className='p-3 max-w-2xl mx-auto w-full' dangerouslySetInnerHTML={{__html: post && post.content}}></div>
        <div className='max-w-4xl mx-auto w-full'>
-        <CallToAction/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <CallToAction/>
+        </Suspense>
        </div>
        <div className="">
-        <CommentSection postId={post._id}/>
+        <Suspense fallback={<div>Loading...</div>}>
+          <CommentSection postId={post._id}/>
+        </Suspense>
        </div>
        <div className="flex flex-col justify-center items-center mb-5">
           <h1 className='text-xl mt-5 mb-2'>Recent Articles</h1>
           <div className="flex flex-wrap gap-5 mt-5 justify-center ">
             {
               recentPosts && recentPosts.map((post)=>(
-                <PostCard key={post._id} post={post}/>
+                <Suspense fallback={<div>Loading</div>}>
+                  <PostCard key={post._id} post={post}/>
+                </Suspense>  
               ))
             }
           </div>

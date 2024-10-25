@@ -11,5 +11,18 @@ export default defineConfig({
     },
   },
 },
-  plugins: [react()],
-})
+  plugins: [react(),],
+  build:{
+    rollupOptions:{
+      manualChunks: {
+        'vendor': [
+          'node_modules/react/index.js',
+          'node_modules/react-dom/index.js',
+          'node_modules/react-router-dom.js',
+          'node_modules/flowbite',
+          'node_modules/flowbite-react',
+        ]},
+        experimentalCodeSplitting: true,
+      },
+    }
+  })
