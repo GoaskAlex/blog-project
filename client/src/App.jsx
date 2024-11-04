@@ -14,7 +14,7 @@ const CreatePost = lazy(()=>import('./pages/CreatePost'))
 const UpdatePost = lazy(()=>import('./pages/UpdatePost'))
 const PostPage = lazy(()=>import('./pages/PostPage'))
 import ScrollToTop from './components/ScrollToTop'
-// import SearchPage from './pages/SearchPage'
+import SearchPage from './pages/SearchPage'
  /////
 function App() {
 
@@ -29,7 +29,7 @@ return (
       <Route path='/about' element={<About/>} />
       <Route path='/sign-in' element={<SignIn/>} />
       <Route path='/sign-up' element={<SignUp/>} />
-      {/* <Route path='/search' element={<SearchPage/>} /> */}
+      <Route path='/search' element={<SearchPage/>} />
         <Route element = {<PrivateRoute/>}>
           <Route path='/dashboard' element={<DashBoard/>} />
         </Route>

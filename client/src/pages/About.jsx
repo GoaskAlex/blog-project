@@ -5,11 +5,19 @@ import { FaAddressBook, FaPaperPlane } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 import ReCAPATCHA from 'react-google-recaptcha'
 
+
+
+
 export default function About() {
   
   const [showModal, setShowModal] = useState(false)
   const [formData, setFormData] = useState({})
   const [capVal, setCapVal]= useState(null)
+  
+  function handleViewResume(e){
+    e.preventDefault()
+    window.open('https://firebasestorage.googleapis.com/v0/b/mernblog-7380c.appspot.com/o/JohnARodriguez_WebDevResume.pdf?alt=media&token=637d6323-9131-4fc1-9499-75f41876e09e','_blank')
+  }
 
   const sendEmail = (event) =>{
     event.preventDefault()
@@ -49,7 +57,7 @@ export default function About() {
         <div className="flex flex-col mt-4 items-center p-2">
             <p>To view more details about me. Feel free to view my Resume</p>
           <div className="flex gap-4 mt-4 items-center">
-          <Button disabled={!capVal} outline gradientDuoTone="purpleToPink" className='text-center '>View Resume</Button>
+          <Button onClick={handleViewResume} disabled={!capVal} outline gradientDuoTone="purpleToPink" className='text-center '>View Resume</Button>
           <ReCAPATCHA onChange={(val) => setCapVal(val)} sitekey="6LfdDF8qAAAAAPpPaCqPjUIF1k3Z4iyqmL2HFYtQ"/>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Footer } from "flowbite-react";
 import { Link } from "react-router-dom";
 import {BsGithub, BsLinkedin} from 'react-icons/bs'
+
 export default function FooterCom() {
   return (
     <>
@@ -22,12 +23,11 @@ export default function FooterCom() {
               <div>
                 <Footer.Title title="About" />
                 <Footer.LinkGroup col>
-                  <Footer.Link
-                    href="/about"
-                    
-                    rel="noopener noreferrer">
-                    Johns Resume
-                  </Footer.Link>
+                  <Link to = '/about'>
+                    <Footer.Link as={'div'}>
+                      Johns Resume
+                    </Footer.Link>
+                  </Link>
                   <Footer.Link
                     href="/projects"
                     target="_blank"

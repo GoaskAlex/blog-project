@@ -105,16 +105,16 @@ export default function SearchPage() {
       <div className='p-7 border-b md:border-r md:min-h-screen border-gray-500'>
         <form className='flex flex-col gap-8' onSubmit={handleSubmit}>
           <div className='flex   items-center gap-2'>
-            <label className='whitespace-nowrap font-semibold'>
+            {/* <label className='whitespace-nowrap font-semibold'>
               Search Term:
-            </label>
-            <TextInput
+            </label> */}
+            {/* <TextInput
               placeholder='Search...'
               id='searchTerm'
               type='text'
               value={sidebarData.searchTerm}
               onChange={handleChange}
-            />
+            /> */}
           </div>
           <div className='flex items-center gap-2'>
             <label className='font-semibold'>Sort:</label>

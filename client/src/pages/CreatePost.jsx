@@ -90,6 +90,8 @@ const handleUpload = async (params) => {
                     <option value="uncategorized">Select a Category</option>
                     <option value="javascript">JavaScript</option>
                     <option value="Next.js">Next.JS</option>
+                    <option value="React">React</option>
+                    <option value="Html/Css">Html/Css</option>
                 </Select>
             </div>
             <div className="flex gap-4 items-center justify-between border-4 border-teal border-dotted p-3">
